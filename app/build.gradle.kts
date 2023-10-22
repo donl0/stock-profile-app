@@ -51,16 +51,22 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-<<<<<<< HEAD
     //Koin
 
     implementation("io.insert-koin:koin-core:3.1.2")
     implementation("io.insert-koin:koin-android:3.1.2")
 
-=======
-    //Koin old:3.1.2
+    //Koin old:
 
     implementation("io.insert-koin:koin-core:3.1.2")
     implementation("io.insert-koin:koin-android:3.1.2")
->>>>>>> develop
+
+    implementation ("io.insert-koin:koin-test:3.1.2")
+    // Koin for JUnit 4
+    implementation ("io.insert-koin:koin-test-junit4:3.1.2")
+    // Koin for JUnit 5
+    implementation ("io.insert-koin:koin-test-junit5:3.1.2")
+
+    //Json
+    implementation("com.google.code.gson:gson:2.8.9")
 }
