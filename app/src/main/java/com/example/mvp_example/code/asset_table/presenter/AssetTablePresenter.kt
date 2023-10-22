@@ -1,5 +1,6 @@
 package com.example.mvp_example.code.asset_table.presenter
 
+import com.example.mvp_example.code.Utils.ViewConvertor.Companion.roundToDecimal
 import com.example.mvp_example.code.Utils.ViewConvertor.Companion.takeWinLoseColor
 import com.example.mvp_example.code.asset_table.model.AllAssetsTableStubModel
 import com.example.mvp_example.code.asset_table.model.BoundsTableModel
@@ -9,6 +10,7 @@ import com.example.mvp_example.code.asset_table.model.StocksTableModel
 import com.example.mvp_example.code.asset_table.model.objects.AssetTable
 import com.example.mvp_example.code.asset_table.model.objects.AssetTableDrawable
 import com.example.mvp_example.code.asset_table.view.IAssetTableView
+import kotlin.math.pow
 
 class AssetTablePresenter(private var _model: IAssetTableModel):IAssetTablePresenter {
     private var _view: IAssetTableView? = null;
@@ -70,10 +72,10 @@ class AssetTablePresenter(private var _model: IAssetTableModel):IAssetTablePrese
             val view = AssetTableDrawable(item.ImageResource,
                 item.Fullname,
                 item.ShortName,
-                item.Count.toString(),
-                item.CurrentPrise.toString(),
-                item.SummaryProfit.toString(),
-                item.Profitability.toString(),
+                roundToDecimal(item.Count, 2).toString(),
+                roundToDecimal(item.CurrentPrise,3).toString(),
+                roundToDecimal(item.SummaryProfit, 3).toString(),
+                roundToDecimal(item.Profitability, 3).toString(),
                 colorView, bgColor)
 
             views.add(view);
